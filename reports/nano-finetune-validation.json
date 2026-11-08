@@ -1,0 +1,2059 @@
+{
+  "selected": {
+    "confidence": 0.25,
+    "scenes": 156,
+    "ground_truth_faces": 701,
+    "detected_faces": 616,
+    "matched_faces_iou_50": 540,
+    "correct_box_and_label": 523,
+    "detector_precision": 0.8766233766233766,
+    "detector_recall": 0.7703281027104137,
+    "classification_accuracy_on_matched_faces": 0.9685185185185186,
+    "correct_label_precision": 0.849025974025974,
+    "end_to_end_correct_label_recall": 0.746077032810271,
+    "accepted_matched": 540,
+    "macro_f1": 0.7355953599454111,
+    "per_class": [
+      {
+        "label": "Mask",
+        "support": 518,
+        "predicted": 459,
+        "precision": 0.869281045751634,
+        "recall": 0.7702702702702703,
+        "f1": 0.8167860798362334
+      },
+      {
+        "label": "No mask",
+        "support": 160,
+        "predicted": 140,
+        "precision": 0.7928571428571428,
+        "recall": 0.69375,
+        "f1": 0.74
+      },
+      {
+        "label": "Incorrect mask",
+        "support": 23,
+        "predicted": 17,
+        "precision": 0.7647058823529411,
+        "recall": 0.5652173913043478,
+        "f1": 0.65
+      }
+    ],
+    "rows": [
+      "Mask",
+      "No mask",
+      "Incorrect mask"
+    ],
+    "columns": [
+      "Mask",
+      "No mask",
+      "Incorrect mask",
+      "Unknown",
+      "Missed"
+    ],
+    "confusion_matrix": [
+      [
+        399,
+        3,
+        2,
+        0,
+        114
+      ],
+      [
+        2,
+        111,
+        2,
+        0,
+        45
+      ],
+      [
+        6,
+        2,
+        13,
+        0,
+        2
+      ]
+    ],
+    "general": {
+      "scenes": 124,
+      "ground_truth_faces": 669,
+      "detected_faces": 583,
+      "matched_faces_iou_50": 508,
+      "correct_box_and_label": 491,
+      "detector_precision": 0.8713550600343053,
+      "detector_recall": 0.7593423019431988,
+      "classification_accuracy_on_matched_faces": 0.9665354330708661,
+      "correct_label_precision": 0.8421955403087479,
+      "end_to_end_correct_label_recall": 0.7339312406576981,
+      "accepted_matched": 508,
+      "macro_f1": 0.7130421684560494,
+      "per_class": [
+        {
+          "label": "Mask",
+          "support": 518,
+          "predicted": 459,
+          "precision": 0.869281045751634,
+          "recall": 0.7702702702702703,
+          "f1": 0.8167860798362334
+        },
+        {
+          "label": "No mask",
+          "support": 128,
+          "predicted": 107,
+          "precision": 0.7383177570093458,
+          "recall": 0.6171875,
+          "f1": 0.6723404255319149
+        },
+        {
+          "label": "Incorrect mask",
+          "support": 23,
+          "predicted": 17,
+          "precision": 0.7647058823529411,
+          "recall": 0.5652173913043478,
+          "f1": 0.65
+        }
+      ],
+      "rows": [
+        "Mask",
+        "No mask",
+        "Incorrect mask"
+      ],
+      "columns": [
+        "Mask",
+        "No mask",
+        "Incorrect mask",
+        "Unknown",
+        "Missed"
+      ],
+      "confusion_matrix": [
+        [
+          399,
+          3,
+          2,
+          0,
+          114
+        ],
+        [
+          2,
+          79,
+          2,
+          0,
+          45
+        ],
+        [
+          6,
+          2,
+          13,
+          0,
+          2
+        ]
+      ]
+    },
+    "hand": {
+      "images": 32,
+      "false_safe_images": 0,
+      "false_any_mask_images": 0,
+      "correct_no_mask_only_images": 32,
+      "no_mask_recall": 1
+    }
+  },
+  "selection": "Validation only: retain general macro-F1/recall and hand No-mask recall, then minimize false-safe hand cases, tie-break combined macro-F1",
+  "options": [
+    {
+      "confidence": 0.35,
+      "scenes": 156,
+      "ground_truth_faces": 701,
+      "detected_faces": 547,
+      "matched_faces_iou_50": 507,
+      "correct_box_and_label": 498,
+      "detector_precision": 0.926873857404022,
+      "detector_recall": 0.7232524964336662,
+      "classification_accuracy_on_matched_faces": 0.9822485207100592,
+      "correct_label_precision": 0.9104204753199269,
+      "end_to_end_correct_label_recall": 0.7104136947218259,
+      "accepted_matched": 507,
+      "macro_f1": 0.7437321643064259,
+      "per_class": [
+        {
+          "label": "Mask",
+          "support": 518,
+          "predicted": 409,
+          "precision": 0.9290953545232273,
+          "recall": 0.7335907335907336,
+          "f1": 0.819848975188781
+        },
+        {
+          "label": "No mask",
+          "support": 160,
+          "predicted": 122,
+          "precision": 0.860655737704918,
+          "recall": 0.65625,
+          "f1": 0.7446808510638298
+        },
+        {
+          "label": "Incorrect mask",
+          "support": 23,
+          "predicted": 16,
+          "precision": 0.8125,
+          "recall": 0.5652173913043478,
+          "f1": 0.6666666666666667
+        }
+      ],
+      "rows": [
+        "Mask",
+        "No mask",
+        "Incorrect mask"
+      ],
+      "columns": [
+        "Mask",
+        "No mask",
+        "Incorrect mask",
+        "Unknown",
+        "Missed"
+      ],
+      "confusion_matrix": [
+        [
+          380,
+          1,
+          2,
+          0,
+          135
+        ],
+        [
+          1,
+          105,
+          1,
+          0,
+          53
+        ],
+        [
+          3,
+          1,
+          13,
+          0,
+          6
+        ]
+      ],
+      "general": {
+        "scenes": 124,
+        "ground_truth_faces": 669,
+        "detected_faces": 517,
+        "matched_faces_iou_50": 477,
+        "correct_box_and_label": 468,
+        "detector_precision": 0.9226305609284333,
+        "detector_recall": 0.7130044843049327,
+        "classification_accuracy_on_matched_faces": 0.9811320754716981,
+        "correct_label_precision": 0.9052224371373307,
+        "end_to_end_correct_label_recall": 0.6995515695067265,
+        "accepted_matched": 477,
+        "macro_f1": 0.7227779412245431,
+        "per_class": [
+          {
+            "label": "Mask",
+            "support": 518,
+            "predicted": 409,
+            "precision": 0.9290953545232273,
+            "recall": 0.7335907335907336,
+            "f1": 0.819848975188781
+          },
+          {
+            "label": "No mask",
+            "support": 128,
+            "predicted": 92,
+            "precision": 0.8152173913043478,
+            "recall": 0.5859375,
+            "f1": 0.6818181818181819
+          },
+          {
+            "label": "Incorrect mask",
+            "support": 23,
+            "predicted": 16,
+            "precision": 0.8125,
+            "recall": 0.5652173913043478,
+            "f1": 0.6666666666666667
+          }
+        ],
+        "rows": [
+          "Mask",
+          "No mask",
+          "Incorrect mask"
+        ],
+        "columns": [
+          "Mask",
+          "No mask",
+          "Incorrect mask",
+          "Unknown",
+          "Missed"
+        ],
+        "confusion_matrix": [
+          [
+            380,
+            1,
+            2,
+            0,
+            135
+          ],
+          [
+            1,
+            75,
+            1,
+            0,
+            51
+          ],
+          [
+            3,
+            1,
+            13,
+            0,
+            6
+          ]
+        ]
+      },
+      "hand": {
+        "images": 32,
+        "false_safe_images": 0,
+        "false_any_mask_images": 0,
+        "correct_no_mask_only_images": 30,
+        "no_mask_recall": 0.9375
+      }
+    },
+    {
+      "confidence": 0.3,
+      "scenes": 156,
+      "ground_truth_faces": 701,
+      "detected_faces": 585,
+      "matched_faces_iou_50": 526,
+      "correct_box_and_label": 511,
+      "detector_precision": 0.8991452991452992,
+      "detector_recall": 0.7503566333808844,
+      "classification_accuracy_on_matched_faces": 0.9714828897338403,
+      "correct_label_precision": 0.8735042735042735,
+      "end_to_end_correct_label_recall": 0.7289586305278174,
+      "accepted_matched": 526,
+      "macro_f1": 0.7357786967634473,
+      "per_class": [
+        {
+          "label": "Mask",
+          "support": 518,
+          "predicted": 436,
+          "precision": 0.8944954128440367,
+          "recall": 0.752895752895753,
+          "f1": 0.8176100628930817
+        },
+        {
+          "label": "No mask",
+          "support": 160,
+          "predicted": 132,
+          "precision": 0.8181818181818182,
+          "recall": 0.675,
+          "f1": 0.7397260273972603
+        },
+        {
+          "label": "Incorrect mask",
+          "support": 23,
+          "predicted": 17,
+          "precision": 0.7647058823529411,
+          "recall": 0.5652173913043478,
+          "f1": 0.65
+        }
+      ],
+      "rows": [
+        "Mask",
+        "No mask",
+        "Incorrect mask"
+      ],
+      "columns": [
+        "Mask",
+        "No mask",
+        "Incorrect mask",
+        "Unknown",
+        "Missed"
+      ],
+      "confusion_matrix": [
+        [
+          390,
+          2,
+          2,
+          0,
+          124
+        ],
+        [
+          2,
+          108,
+          2,
+          0,
+          48
+        ],
+        [
+          5,
+          2,
+          13,
+          0,
+          3
+        ]
+      ],
+      "general": {
+        "scenes": 124,
+        "ground_truth_faces": 669,
+        "detected_faces": 553,
+        "matched_faces_iou_50": 494,
+        "correct_box_and_label": 479,
+        "detector_precision": 0.8933092224231465,
+        "detector_recall": 0.7384155455904334,
+        "classification_accuracy_on_matched_faces": 0.9696356275303644,
+        "correct_label_precision": 0.8661844484629295,
+        "end_to_end_correct_label_recall": 0.7159940209267563,
+        "accepted_matched": 494,
+        "macro_f1": 0.7114255765199161,
+        "per_class": [
+          {
+            "label": "Mask",
+            "support": 518,
+            "predicted": 436,
+            "precision": 0.8944954128440367,
+            "recall": 0.752895752895753,
+            "f1": 0.8176100628930817
+          },
+          {
+            "label": "No mask",
+            "support": 128,
+            "predicted": 100,
+            "precision": 0.76,
+            "recall": 0.59375,
+            "f1": 0.6666666666666666
+          },
+          {
+            "label": "Incorrect mask",
+            "support": 23,
+            "predicted": 17,
+            "precision": 0.7647058823529411,
+            "recall": 0.5652173913043478,
+            "f1": 0.65
+          }
+        ],
+        "rows": [
+          "Mask",
+          "No mask",
+          "Incorrect mask"
+        ],
+        "columns": [
+          "Mask",
+          "No mask",
+          "Incorrect mask",
+          "Unknown",
+          "Missed"
+        ],
+        "confusion_matrix": [
+          [
+            390,
+            2,
+            2,
+            0,
+            124
+          ],
+          [
+            2,
+            76,
+            2,
+            0,
+            48
+          ],
+          [
+            5,
+            2,
+            13,
+            0,
+            3
+          ]
+        ]
+      },
+      "hand": {
+        "images": 32,
+        "false_safe_images": 0,
+        "false_any_mask_images": 0,
+        "correct_no_mask_only_images": 32,
+        "no_mask_recall": 1
+      }
+    },
+    {
+      "confidence": 0.25,
+      "scenes": 156,
+      "ground_truth_faces": 701,
+      "detected_faces": 616,
+      "matched_faces_iou_50": 540,
+      "correct_box_and_label": 523,
+      "detector_precision": 0.8766233766233766,
+      "detector_recall": 0.7703281027104137,
+      "classification_accuracy_on_matched_faces": 0.9685185185185186,
+      "correct_label_precision": 0.849025974025974,
+      "end_to_end_correct_label_recall": 0.746077032810271,
+      "accepted_matched": 540,
+      "macro_f1": 0.7355953599454111,
+      "per_class": [
+        {
+          "label": "Mask",
+          "support": 518,
+          "predicted": 459,
+          "precision": 0.869281045751634,
+          "recall": 0.7702702702702703,
+          "f1": 0.8167860798362334
+        },
+        {
+          "label": "No mask",
+          "support": 160,
+          "predicted": 140,
+          "precision": 0.7928571428571428,
+          "recall": 0.69375,
+          "f1": 0.74
+        },
+        {
+          "label": "Incorrect mask",
+          "support": 23,
+          "predicted": 17,
+          "precision": 0.7647058823529411,
+          "recall": 0.5652173913043478,
+          "f1": 0.65
+        }
+      ],
+      "rows": [
+        "Mask",
+        "No mask",
+        "Incorrect mask"
+      ],
+      "columns": [
+        "Mask",
+        "No mask",
+        "Incorrect mask",
+        "Unknown",
+        "Missed"
+      ],
+      "confusion_matrix": [
+        [
+          399,
+          3,
+          2,
+          0,
+          114
+        ],
+        [
+          2,
+          111,
+          2,
+          0,
+          45
+        ],
+        [
+          6,
+          2,
+          13,
+          0,
+          2
+        ]
+      ],
+      "general": {
+        "scenes": 124,
+        "ground_truth_faces": 669,
+        "detected_faces": 583,
+        "matched_faces_iou_50": 508,
+        "correct_box_and_label": 491,
+        "detector_precision": 0.8713550600343053,
+        "detector_recall": 0.7593423019431988,
+        "classification_accuracy_on_matched_faces": 0.9665354330708661,
+        "correct_label_precision": 0.8421955403087479,
+        "end_to_end_correct_label_recall": 0.7339312406576981,
+        "accepted_matched": 508,
+        "macro_f1": 0.7130421684560494,
+        "per_class": [
+          {
+            "label": "Mask",
+            "support": 518,
+            "predicted": 459,
+            "precision": 0.869281045751634,
+            "recall": 0.7702702702702703,
+            "f1": 0.8167860798362334
+          },
+          {
+            "label": "No mask",
+            "support": 128,
+            "predicted": 107,
+            "precision": 0.7383177570093458,
+            "recall": 0.6171875,
+            "f1": 0.6723404255319149
+          },
+          {
+            "label": "Incorrect mask",
+            "support": 23,
+            "predicted": 17,
+            "precision": 0.7647058823529411,
+            "recall": 0.5652173913043478,
+            "f1": 0.65
+          }
+        ],
+        "rows": [
+          "Mask",
+          "No mask",
+          "Incorrect mask"
+        ],
+        "columns": [
+          "Mask",
+          "No mask",
+          "Incorrect mask",
+          "Unknown",
+          "Missed"
+        ],
+        "confusion_matrix": [
+          [
+            399,
+            3,
+            2,
+            0,
+            114
+          ],
+          [
+            2,
+            79,
+            2,
+            0,
+            45
+          ],
+          [
+            6,
+            2,
+            13,
+            0,
+            2
+          ]
+        ]
+      },
+      "hand": {
+        "images": 32,
+        "false_safe_images": 0,
+        "false_any_mask_images": 0,
+        "correct_no_mask_only_images": 32,
+        "no_mask_recall": 1
+      }
+    },
+    {
+      "confidence": 0.4,
+      "scenes": 156,
+      "ground_truth_faces": 701,
+      "detected_faces": 517,
+      "matched_faces_iou_50": 490,
+      "correct_box_and_label": 484,
+      "detector_precision": 0.9477756286266924,
+      "detector_recall": 0.6990014265335235,
+      "classification_accuracy_on_matched_faces": 0.9877551020408163,
+      "correct_label_precision": 0.9361702127659575,
+      "end_to_end_correct_label_recall": 0.6904422253922967,
+      "accepted_matched": 490,
+      "macro_f1": 0.724881828842225,
+      "per_class": [
+        {
+          "label": "Mask",
+          "support": 518,
+          "predicted": 391,
+          "precision": 0.948849104859335,
+          "recall": 0.7162162162162162,
+          "f1": 0.8162816281628162
+        },
+        {
+          "label": "No mask",
+          "support": 160,
+          "predicted": 113,
+          "precision": 0.9026548672566371,
+          "recall": 0.6375,
+          "f1": 0.7472527472527473
+        },
+        {
+          "label": "Incorrect mask",
+          "support": 23,
+          "predicted": 13,
+          "precision": 0.8461538461538461,
+          "recall": 0.4782608695652174,
+          "f1": 0.6111111111111112
+        }
+      ],
+      "rows": [
+        "Mask",
+        "No mask",
+        "Incorrect mask"
+      ],
+      "columns": [
+        "Mask",
+        "No mask",
+        "Incorrect mask",
+        "Unknown",
+        "Missed"
+      ],
+      "confusion_matrix": [
+        [
+          371,
+          1,
+          1,
+          0,
+          145
+        ],
+        [
+          0,
+          102,
+          1,
+          0,
+          57
+        ],
+        [
+          3,
+          0,
+          11,
+          0,
+          9
+        ]
+      ],
+      "general": {
+        "scenes": 124,
+        "ground_truth_faces": 669,
+        "detected_faces": 487,
+        "matched_faces_iou_50": 460,
+        "correct_box_and_label": 454,
+        "detector_precision": 0.944558521560575,
+        "detector_recall": 0.6875934230194319,
+        "classification_accuracy_on_matched_faces": 0.9869565217391304,
+        "correct_label_precision": 0.9322381930184805,
+        "end_to_end_correct_label_recall": 0.6786248131539612,
+        "accepted_matched": 460,
+        "macro_f1": 0.7032857314167437,
+        "per_class": [
+          {
+            "label": "Mask",
+            "support": 518,
+            "predicted": 391,
+            "precision": 0.948849104859335,
+            "recall": 0.7162162162162162,
+            "f1": 0.8162816281628162
+          },
+          {
+            "label": "No mask",
+            "support": 128,
+            "predicted": 83,
+            "precision": 0.8674698795180723,
+            "recall": 0.5625,
+            "f1": 0.6824644549763033
+          },
+          {
+            "label": "Incorrect mask",
+            "support": 23,
+            "predicted": 13,
+            "precision": 0.8461538461538461,
+            "recall": 0.4782608695652174,
+            "f1": 0.6111111111111112
+          }
+        ],
+        "rows": [
+          "Mask",
+          "No mask",
+          "Incorrect mask"
+        ],
+        "columns": [
+          "Mask",
+          "No mask",
+          "Incorrect mask",
+          "Unknown",
+          "Missed"
+        ],
+        "confusion_matrix": [
+          [
+            371,
+            1,
+            1,
+            0,
+            145
+          ],
+          [
+            0,
+            72,
+            1,
+            0,
+            55
+          ],
+          [
+            3,
+            0,
+            11,
+            0,
+            9
+          ]
+        ]
+      },
+      "hand": {
+        "images": 32,
+        "false_safe_images": 0,
+        "false_any_mask_images": 0,
+        "correct_no_mask_only_images": 30,
+        "no_mask_recall": 0.9375
+      }
+    },
+    {
+      "confidence": 0.15,
+      "scenes": 156,
+      "ground_truth_faces": 701,
+      "detected_faces": 713,
+      "matched_faces_iou_50": 574,
+      "correct_box_and_label": 554,
+      "detector_precision": 0.8050490883590463,
+      "detector_recall": 0.818830242510699,
+      "classification_accuracy_on_matched_faces": 0.9651567944250871,
+      "correct_label_precision": 0.7769985974754559,
+      "end_to_end_correct_label_recall": 0.7902995720399429,
+      "accepted_matched": 574,
+      "macro_f1": 0.7206625258799172,
+      "per_class": [
+        {
+          "label": "Mask",
+          "support": 518,
+          "predicted": 532,
+          "precision": 0.793233082706767,
+          "recall": 0.8146718146718147,
+          "f1": 0.8038095238095239
+        },
+        {
+          "label": "No mask",
+          "support": 160,
+          "predicted": 162,
+          "precision": 0.7345679012345679,
+          "recall": 0.74375,
+          "f1": 0.7391304347826086
+        },
+        {
+          "label": "Incorrect mask",
+          "support": 23,
+          "predicted": 19,
+          "precision": 0.6842105263157895,
+          "recall": 0.5652173913043478,
+          "f1": 0.6190476190476191
+        }
+      ],
+      "rows": [
+        "Mask",
+        "No mask",
+        "Incorrect mask"
+      ],
+      "columns": [
+        "Mask",
+        "No mask",
+        "Incorrect mask",
+        "Unknown",
+        "Missed"
+      ],
+      "confusion_matrix": [
+        [
+          422,
+          5,
+          2,
+          0,
+          89
+        ],
+        [
+          3,
+          119,
+          2,
+          0,
+          36
+        ],
+        [
+          6,
+          2,
+          13,
+          0,
+          2
+        ]
+      ],
+      "general": {
+        "scenes": 124,
+        "ground_truth_faces": 669,
+        "detected_faces": 679,
+        "matched_faces_iou_50": 542,
+        "correct_box_and_label": 522,
+        "detector_precision": 0.7982326951399117,
+        "detector_recall": 0.8101644245142003,
+        "classification_accuracy_on_matched_faces": 0.9630996309963099,
+        "correct_label_precision": 0.7687776141384389,
+        "end_to_end_correct_label_recall": 0.7802690582959642,
+        "accepted_matched": 542,
+        "macro_f1": 0.7008482142857143,
+        "per_class": [
+          {
+            "label": "Mask",
+            "support": 518,
+            "predicted": 532,
+            "precision": 0.793233082706767,
+            "recall": 0.8146718146718147,
+            "f1": 0.8038095238095239
+          },
+          {
+            "label": "No mask",
+            "support": 128,
+            "predicted": 128,
+            "precision": 0.6796875,
+            "recall": 0.6796875,
+            "f1": 0.6796875
+          },
+          {
+            "label": "Incorrect mask",
+            "support": 23,
+            "predicted": 19,
+            "precision": 0.6842105263157895,
+            "recall": 0.5652173913043478,
+            "f1": 0.6190476190476191
+          }
+        ],
+        "rows": [
+          "Mask",
+          "No mask",
+          "Incorrect mask"
+        ],
+        "columns": [
+          "Mask",
+          "No mask",
+          "Incorrect mask",
+          "Unknown",
+          "Missed"
+        ],
+        "confusion_matrix": [
+          [
+            422,
+            5,
+            2,
+            0,
+            89
+          ],
+          [
+            3,
+            87,
+            2,
+            0,
+            36
+          ],
+          [
+            6,
+            2,
+            13,
+            0,
+            2
+          ]
+        ]
+      },
+      "hand": {
+        "images": 32,
+        "false_safe_images": 0,
+        "false_any_mask_images": 0,
+        "correct_no_mask_only_images": 32,
+        "no_mask_recall": 1
+      }
+    },
+    {
+      "confidence": 0.2,
+      "scenes": 156,
+      "ground_truth_faces": 701,
+      "detected_faces": 651,
+      "matched_faces_iou_50": 550,
+      "correct_box_and_label": 532,
+      "detector_precision": 0.8448540706605223,
+      "detector_recall": 0.7845934379457917,
+      "classification_accuracy_on_matched_faces": 0.9672727272727273,
+      "correct_label_precision": 0.8172043010752689,
+      "end_to_end_correct_label_recall": 0.7589158345221113,
+      "accepted_matched": 550,
+      "macro_f1": 0.7200848723154768,
+      "per_class": [
+        {
+          "label": "Mask",
+          "support": 518,
+          "predicted": 485,
+          "precision": 0.8391752577319588,
+          "recall": 0.7857142857142857,
+          "f1": 0.8115653040877367
+        },
+        {
+          "label": "No mask",
+          "support": 160,
+          "predicted": 147,
+          "precision": 0.7619047619047619,
+          "recall": 0.7,
+          "f1": 0.7296416938110748
+        },
+        {
+          "label": "Incorrect mask",
+          "support": 23,
+          "predicted": 19,
+          "precision": 0.6842105263157895,
+          "recall": 0.5652173913043478,
+          "f1": 0.6190476190476191
+        }
+      ],
+      "rows": [
+        "Mask",
+        "No mask",
+        "Incorrect mask"
+      ],
+      "columns": [
+        "Mask",
+        "No mask",
+        "Incorrect mask",
+        "Unknown",
+        "Missed"
+      ],
+      "confusion_matrix": [
+        [
+          407,
+          4,
+          2,
+          0,
+          105
+        ],
+        [
+          2,
+          112,
+          2,
+          0,
+          44
+        ],
+        [
+          6,
+          2,
+          13,
+          0,
+          2
+        ]
+      ],
+      "general": {
+        "scenes": 124,
+        "ground_truth_faces": 669,
+        "detected_faces": 618,
+        "matched_faces_iou_50": 518,
+        "correct_box_and_label": 500,
+        "detector_precision": 0.8381877022653722,
+        "detector_recall": 0.7742899850523169,
+        "classification_accuracy_on_matched_faces": 0.9652509652509652,
+        "correct_label_precision": 0.8090614886731392,
+        "end_to_end_correct_label_recall": 0.7473841554559043,
+        "accepted_matched": 518,
+        "macro_f1": 0.6972566493095814,
+        "per_class": [
+          {
+            "label": "Mask",
+            "support": 518,
+            "predicted": 485,
+            "precision": 0.8391752577319588,
+            "recall": 0.7857142857142857,
+            "f1": 0.8115653040877367
+          },
+          {
+            "label": "No mask",
+            "support": 128,
+            "predicted": 114,
+            "precision": 0.7017543859649122,
+            "recall": 0.625,
+            "f1": 0.6611570247933884
+          },
+          {
+            "label": "Incorrect mask",
+            "support": 23,
+            "predicted": 19,
+            "precision": 0.6842105263157895,
+            "recall": 0.5652173913043478,
+            "f1": 0.6190476190476191
+          }
+        ],
+        "rows": [
+          "Mask",
+          "No mask",
+          "Incorrect mask"
+        ],
+        "columns": [
+          "Mask",
+          "No mask",
+          "Incorrect mask",
+          "Unknown",
+          "Missed"
+        ],
+        "confusion_matrix": [
+          [
+            407,
+            4,
+            2,
+            0,
+            105
+          ],
+          [
+            2,
+            80,
+            2,
+            0,
+            44
+          ],
+          [
+            6,
+            2,
+            13,
+            0,
+            2
+          ]
+        ]
+      },
+      "hand": {
+        "images": 32,
+        "false_safe_images": 0,
+        "false_any_mask_images": 0,
+        "correct_no_mask_only_images": 32,
+        "no_mask_recall": 1
+      }
+    },
+    {
+      "confidence": 0.1,
+      "scenes": 156,
+      "ground_truth_faces": 701,
+      "detected_faces": 827,
+      "matched_faces_iou_50": 588,
+      "correct_box_and_label": 567,
+      "detector_precision": 0.7110036275695284,
+      "detector_recall": 0.8388017118402282,
+      "classification_accuracy_on_matched_faces": 0.9642857142857143,
+      "correct_label_precision": 0.6856106408706167,
+      "end_to_end_correct_label_recall": 0.8088445078459344,
+      "accepted_matched": 588,
+      "macro_f1": 0.6936730008343339,
+      "per_class": [
+        {
+          "label": "Mask",
+          "support": 518,
+          "predicted": 627,
+          "precision": 0.6874003189792663,
+          "recall": 0.832046332046332,
+          "f1": 0.7528384279475983
+        },
+        {
+          "label": "No mask",
+          "support": 160,
+          "predicted": 180,
+          "precision": 0.6833333333333333,
+          "recall": 0.76875,
+          "f1": 0.723529411764706
+        },
+        {
+          "label": "Incorrect mask",
+          "support": 23,
+          "predicted": 20,
+          "precision": 0.65,
+          "recall": 0.5652173913043478,
+          "f1": 0.6046511627906976
+        }
+      ],
+      "rows": [
+        "Mask",
+        "No mask",
+        "Incorrect mask"
+      ],
+      "columns": [
+        "Mask",
+        "No mask",
+        "Incorrect mask",
+        "Unknown",
+        "Missed"
+      ],
+      "confusion_matrix": [
+        [
+          431,
+          6,
+          2,
+          0,
+          79
+        ],
+        [
+          3,
+          123,
+          2,
+          0,
+          32
+        ],
+        [
+          6,
+          2,
+          13,
+          0,
+          2
+        ]
+      ],
+      "general": {
+        "scenes": 124,
+        "ground_truth_faces": 669,
+        "detected_faces": 793,
+        "matched_faces_iou_50": 556,
+        "correct_box_and_label": 535,
+        "detector_precision": 0.7011349306431274,
+        "detector_recall": 0.8310911808669657,
+        "classification_accuracy_on_matched_faces": 0.9622302158273381,
+        "correct_label_precision": 0.6746532156368222,
+        "end_to_end_correct_label_recall": 0.7997010463378177,
+        "accepted_matched": 556,
+        "macro_f1": 0.6739077224602106,
+        "per_class": [
+          {
+            "label": "Mask",
+            "support": 518,
+            "predicted": 627,
+            "precision": 0.6874003189792663,
+            "recall": 0.832046332046332,
+            "f1": 0.7528384279475983
+          },
+          {
+            "label": "No mask",
+            "support": 128,
+            "predicted": 146,
+            "precision": 0.6232876712328768,
+            "recall": 0.7109375,
+            "f1": 0.6642335766423358
+          },
+          {
+            "label": "Incorrect mask",
+            "support": 23,
+            "predicted": 20,
+            "precision": 0.65,
+            "recall": 0.5652173913043478,
+            "f1": 0.6046511627906976
+          }
+        ],
+        "rows": [
+          "Mask",
+          "No mask",
+          "Incorrect mask"
+        ],
+        "columns": [
+          "Mask",
+          "No mask",
+          "Incorrect mask",
+          "Unknown",
+          "Missed"
+        ],
+        "confusion_matrix": [
+          [
+            431,
+            6,
+            2,
+            0,
+            79
+          ],
+          [
+            3,
+            91,
+            2,
+            0,
+            32
+          ],
+          [
+            6,
+            2,
+            13,
+            0,
+            2
+          ]
+        ]
+      },
+      "hand": {
+        "images": 32,
+        "false_safe_images": 0,
+        "false_any_mask_images": 0,
+        "correct_no_mask_only_images": 32,
+        "no_mask_recall": 1
+      }
+    },
+    {
+      "confidence": 0.45,
+      "scenes": 156,
+      "ground_truth_faces": 701,
+      "detected_faces": 497,
+      "matched_faces_iou_50": 476,
+      "correct_box_and_label": 470,
+      "detector_precision": 0.9577464788732394,
+      "detector_recall": 0.6790299572039943,
+      "classification_accuracy_on_matched_faces": 0.9873949579831933,
+      "correct_label_precision": 0.9456740442655935,
+      "end_to_end_correct_label_recall": 0.6704707560627675,
+      "accepted_matched": 476,
+      "macro_f1": 0.6747859466009661,
+      "per_class": [
+        {
+          "label": "Mask",
+          "support": 518,
+          "predicted": 380,
+          "precision": 0.9605263157894737,
+          "recall": 0.7046332046332047,
+          "f1": 0.8129175946547884
+        },
+        {
+          "label": "No mask",
+          "support": 160,
+          "predicted": 107,
+          "precision": 0.9065420560747663,
+          "recall": 0.60625,
+          "f1": 0.7265917602996255
+        },
+        {
+          "label": "Incorrect mask",
+          "support": 23,
+          "predicted": 10,
+          "precision": 0.8,
+          "recall": 0.34782608695652173,
+          "f1": 0.48484848484848486
+        }
+      ],
+      "rows": [
+        "Mask",
+        "No mask",
+        "Incorrect mask"
+      ],
+      "columns": [
+        "Mask",
+        "No mask",
+        "Incorrect mask",
+        "Unknown",
+        "Missed"
+      ],
+      "confusion_matrix": [
+        [
+          365,
+          1,
+          1,
+          0,
+          151
+        ],
+        [
+          0,
+          97,
+          1,
+          0,
+          62
+        ],
+        [
+          3,
+          0,
+          8,
+          0,
+          12
+        ]
+      ],
+      "general": {
+        "scenes": 124,
+        "ground_truth_faces": 669,
+        "detected_faces": 467,
+        "matched_faces_iou_50": 446,
+        "correct_box_and_label": 440,
+        "detector_precision": 0.9550321199143469,
+        "detector_recall": 0.6666666666666666,
+        "classification_accuracy_on_matched_faces": 0.9865470852017937,
+        "correct_label_precision": 0.9421841541755889,
+        "end_to_end_correct_label_recall": 0.6576980568011959,
+        "accepted_matched": 446,
+        "macro_f1": 0.6504748720295463,
+        "per_class": [
+          {
+            "label": "Mask",
+            "support": 518,
+            "predicted": 380,
+            "precision": 0.9605263157894737,
+            "recall": 0.7046332046332047,
+            "f1": 0.8129175946547884
+          },
+          {
+            "label": "No mask",
+            "support": 128,
+            "predicted": 77,
+            "precision": 0.8701298701298701,
+            "recall": 0.5234375,
+            "f1": 0.6536585365853659
+          },
+          {
+            "label": "Incorrect mask",
+            "support": 23,
+            "predicted": 10,
+            "precision": 0.8,
+            "recall": 0.34782608695652173,
+            "f1": 0.48484848484848486
+          }
+        ],
+        "rows": [
+          "Mask",
+          "No mask",
+          "Incorrect mask"
+        ],
+        "columns": [
+          "Mask",
+          "No mask",
+          "Incorrect mask",
+          "Unknown",
+          "Missed"
+        ],
+        "confusion_matrix": [
+          [
+            365,
+            1,
+            1,
+            0,
+            151
+          ],
+          [
+            0,
+            67,
+            1,
+            0,
+            60
+          ],
+          [
+            3,
+            0,
+            8,
+            0,
+            12
+          ]
+        ]
+      },
+      "hand": {
+        "images": 32,
+        "false_safe_images": 0,
+        "false_any_mask_images": 0,
+        "correct_no_mask_only_images": 30,
+        "no_mask_recall": 0.9375
+      }
+    },
+    {
+      "confidence": 0.5,
+      "scenes": 156,
+      "ground_truth_faces": 701,
+      "detected_faces": 480,
+      "matched_faces_iou_50": 464,
+      "correct_box_and_label": 459,
+      "detector_precision": 0.9666666666666667,
+      "detector_recall": 0.6619115549215406,
+      "classification_accuracy_on_matched_faces": 0.9892241379310345,
+      "correct_label_precision": 0.95625,
+      "end_to_end_correct_label_recall": 0.6547788873038516,
+      "accepted_matched": 464,
+      "macro_f1": 0.6706598206598207,
+      "per_class": [
+        {
+          "label": "Mask",
+          "support": 518,
+          "predicted": 370,
+          "precision": 0.9648648648648649,
+          "recall": 0.6891891891891891,
+          "f1": 0.804054054054054
+        },
+        {
+          "label": "No mask",
+          "support": 160,
+          "predicted": 100,
+          "precision": 0.94,
+          "recall": 0.5875,
+          "f1": 0.7230769230769232
+        },
+        {
+          "label": "Incorrect mask",
+          "support": 23,
+          "predicted": 10,
+          "precision": 0.8,
+          "recall": 0.34782608695652173,
+          "f1": 0.48484848484848486
+        }
+      ],
+      "rows": [
+        "Mask",
+        "No mask",
+        "Incorrect mask"
+      ],
+      "columns": [
+        "Mask",
+        "No mask",
+        "Incorrect mask",
+        "Unknown",
+        "Missed"
+      ],
+      "confusion_matrix": [
+        [
+          357,
+          1,
+          1,
+          0,
+          159
+        ],
+        [
+          0,
+          94,
+          1,
+          0,
+          65
+        ],
+        [
+          2,
+          0,
+          8,
+          0,
+          13
+        ]
+      ],
+      "general": {
+        "scenes": 124,
+        "ground_truth_faces": 669,
+        "detected_faces": 451,
+        "matched_faces_iou_50": 435,
+        "correct_box_and_label": 430,
+        "detector_precision": 0.9645232815964523,
+        "detector_recall": 0.6502242152466368,
+        "classification_accuracy_on_matched_faces": 0.9885057471264368,
+        "correct_label_precision": 0.9534368070953437,
+        "end_to_end_correct_label_recall": 0.6427503736920778,
+        "accepted_matched": 435,
+        "macro_f1": 0.6473896235202767,
+        "per_class": [
+          {
+            "label": "Mask",
+            "support": 518,
+            "predicted": 370,
+            "precision": 0.9648648648648649,
+            "recall": 0.6891891891891891,
+            "f1": 0.804054054054054
+          },
+          {
+            "label": "No mask",
+            "support": 128,
+            "predicted": 71,
+            "precision": 0.9154929577464789,
+            "recall": 0.5078125,
+            "f1": 0.6532663316582914
+          },
+          {
+            "label": "Incorrect mask",
+            "support": 23,
+            "predicted": 10,
+            "precision": 0.8,
+            "recall": 0.34782608695652173,
+            "f1": 0.48484848484848486
+          }
+        ],
+        "rows": [
+          "Mask",
+          "No mask",
+          "Incorrect mask"
+        ],
+        "columns": [
+          "Mask",
+          "No mask",
+          "Incorrect mask",
+          "Unknown",
+          "Missed"
+        ],
+        "confusion_matrix": [
+          [
+            357,
+            1,
+            1,
+            0,
+            159
+          ],
+          [
+            0,
+            65,
+            1,
+            0,
+            62
+          ],
+          [
+            2,
+            0,
+            8,
+            0,
+            13
+          ]
+        ]
+      },
+      "hand": {
+        "images": 32,
+        "false_safe_images": 0,
+        "false_any_mask_images": 0,
+        "correct_no_mask_only_images": 29,
+        "no_mask_recall": 0.90625
+      }
+    },
+    {
+      "confidence": 0.6,
+      "scenes": 156,
+      "ground_truth_faces": 701,
+      "detected_faces": 435,
+      "matched_faces_iou_50": 425,
+      "correct_box_and_label": 422,
+      "detector_precision": 0.9770114942528736,
+      "detector_recall": 0.6062767475035663,
+      "classification_accuracy_on_matched_faces": 0.9929411764705882,
+      "correct_label_precision": 0.9701149425287356,
+      "end_to_end_correct_label_recall": 0.6019971469329529,
+      "accepted_matched": 425,
+      "macro_f1": 0.6233600349916265,
+      "per_class": [
+        {
+          "label": "Mask",
+          "support": 518,
+          "predicted": 338,
+          "precision": 0.9763313609467456,
+          "recall": 0.637065637065637,
+          "f1": 0.7710280373831775
+        },
+        {
+          "label": "No mask",
+          "support": 160,
+          "predicted": 91,
+          "precision": 0.945054945054945,
+          "recall": 0.5375,
+          "f1": 0.6852589641434264
+        },
+        {
+          "label": "Incorrect mask",
+          "support": 23,
+          "predicted": 6,
+          "precision": 1,
+          "recall": 0.2608695652173913,
+          "f1": 0.41379310344827586
+        }
+      ],
+      "rows": [
+        "Mask",
+        "No mask",
+        "Incorrect mask"
+      ],
+      "columns": [
+        "Mask",
+        "No mask",
+        "Incorrect mask",
+        "Unknown",
+        "Missed"
+      ],
+      "confusion_matrix": [
+        [
+          330,
+          1,
+          0,
+          0,
+          187
+        ],
+        [
+          0,
+          86,
+          0,
+          0,
+          74
+        ],
+        [
+          2,
+          0,
+          6,
+          0,
+          15
+        ]
+      ],
+      "general": {
+        "scenes": 124,
+        "ground_truth_faces": 669,
+        "detected_faces": 406,
+        "matched_faces_iou_50": 396,
+        "correct_box_and_label": 393,
+        "detector_precision": 0.9753694581280788,
+        "detector_recall": 0.5919282511210763,
+        "classification_accuracy_on_matched_faces": 0.9924242424242424,
+        "correct_label_precision": 0.9679802955665024,
+        "end_to_end_correct_label_recall": 0.5874439461883408,
+        "accepted_matched": 396,
+        "macro_f1": 0.594940380277151,
+        "per_class": [
+          {
+            "label": "Mask",
+            "support": 518,
+            "predicted": 338,
+            "precision": 0.9763313609467456,
+            "recall": 0.637065637065637,
+            "f1": 0.7710280373831775
+          },
+          {
+            "label": "No mask",
+            "support": 128,
+            "predicted": 62,
+            "precision": 0.9193548387096774,
+            "recall": 0.4453125,
+            "f1": 0.5999999999999999
+          },
+          {
+            "label": "Incorrect mask",
+            "support": 23,
+            "predicted": 6,
+            "precision": 1,
+            "recall": 0.2608695652173913,
+            "f1": 0.41379310344827586
+          }
+        ],
+        "rows": [
+          "Mask",
+          "No mask",
+          "Incorrect mask"
+        ],
+        "columns": [
+          "Mask",
+          "No mask",
+          "Incorrect mask",
+          "Unknown",
+          "Missed"
+        ],
+        "confusion_matrix": [
+          [
+            330,
+            1,
+            0,
+            0,
+            187
+          ],
+          [
+            0,
+            57,
+            0,
+            0,
+            71
+          ],
+          [
+            2,
+            0,
+            6,
+            0,
+            15
+          ]
+        ]
+      },
+      "hand": {
+        "images": 32,
+        "false_safe_images": 0,
+        "false_any_mask_images": 0,
+        "correct_no_mask_only_images": 29,
+        "no_mask_recall": 0.90625
+      }
+    },
+    {
+      "confidence": 0.7,
+      "scenes": 156,
+      "ground_truth_faces": 701,
+      "detected_faces": 379,
+      "matched_faces_iou_50": 372,
+      "correct_box_and_label": 369,
+      "detector_precision": 0.9815303430079155,
+      "detector_recall": 0.5306704707560628,
+      "classification_accuracy_on_matched_faces": 0.9919354838709677,
+      "correct_label_precision": 0.9736147757255936,
+      "end_to_end_correct_label_recall": 0.5263908701854494,
+      "accepted_matched": 372,
+      "macro_f1": 0.5764473212242595,
+      "per_class": [
+        {
+          "label": "Mask",
+          "support": 518,
+          "predicted": 299,
+          "precision": 0.979933110367893,
+          "recall": 0.5656370656370656,
+          "f1": 0.7172582619339044
+        },
+        {
+          "label": "No mask",
+          "support": 160,
+          "predicted": 74,
+          "precision": 0.9459459459459459,
+          "recall": 0.4375,
+          "f1": 0.5982905982905983
+        },
+        {
+          "label": "Incorrect mask",
+          "support": 23,
+          "predicted": 6,
+          "precision": 1,
+          "recall": 0.2608695652173913,
+          "f1": 0.41379310344827586
+        }
+      ],
+      "rows": [
+        "Mask",
+        "No mask",
+        "Incorrect mask"
+      ],
+      "columns": [
+        "Mask",
+        "No mask",
+        "Incorrect mask",
+        "Unknown",
+        "Missed"
+      ],
+      "confusion_matrix": [
+        [
+          293,
+          1,
+          0,
+          0,
+          224
+        ],
+        [
+          0,
+          70,
+          0,
+          0,
+          90
+        ],
+        [
+          2,
+          0,
+          6,
+          0,
+          15
+        ]
+      ],
+      "general": {
+        "scenes": 124,
+        "ground_truth_faces": 669,
+        "detected_faces": 356,
+        "matched_faces_iou_50": 349,
+        "correct_box_and_label": 346,
+        "detector_precision": 0.9803370786516854,
+        "detector_recall": 0.5216741405082213,
+        "classification_accuracy_on_matched_faces": 0.9914040114613181,
+        "correct_label_precision": 0.9719101123595506,
+        "end_to_end_correct_label_recall": 0.5171898355754858,
+        "accepted_matched": 349,
+        "macro_f1": 0.5520636767288831,
+        "per_class": [
+          {
+            "label": "Mask",
+            "support": 518,
+            "predicted": 299,
+            "precision": 0.979933110367893,
+            "recall": 0.5656370656370656,
+            "f1": 0.7172582619339044
+          },
+          {
+            "label": "No mask",
+            "support": 128,
+            "predicted": 51,
+            "precision": 0.9215686274509803,
+            "recall": 0.3671875,
+            "f1": 0.5251396648044693
+          },
+          {
+            "label": "Incorrect mask",
+            "support": 23,
+            "predicted": 6,
+            "precision": 1,
+            "recall": 0.2608695652173913,
+            "f1": 0.41379310344827586
+          }
+        ],
+        "rows": [
+          "Mask",
+          "No mask",
+          "Incorrect mask"
+        ],
+        "columns": [
+          "Mask",
+          "No mask",
+          "Incorrect mask",
+          "Unknown",
+          "Missed"
+        ],
+        "confusion_matrix": [
+          [
+            293,
+            1,
+            0,
+            0,
+            224
+          ],
+          [
+            0,
+            47,
+            0,
+            0,
+            81
+          ],
+          [
+            2,
+            0,
+            6,
+            0,
+            15
+          ]
+        ]
+      },
+      "hand": {
+        "images": 32,
+        "false_safe_images": 0,
+        "false_any_mask_images": 0,
+        "correct_no_mask_only_images": 23,
+        "no_mask_recall": 0.71875
+      }
+    },
+    {
+      "confidence": 0.85,
+      "scenes": 156,
+      "ground_truth_faces": 701,
+      "detected_faces": 146,
+      "matched_faces_iou_50": 146,
+      "correct_box_and_label": 145,
+      "detector_precision": 1,
+      "detector_recall": 0.20827389443651925,
+      "classification_accuracy_on_matched_faces": 0.9931506849315068,
+      "correct_label_precision": 0.9931506849315068,
+      "end_to_end_correct_label_recall": 0.20684736091298145,
+      "accepted_matched": 146,
+      "macro_f1": 0.32051282051282054,
+      "per_class": [
+        {
+          "label": "Mask",
+          "support": 518,
+          "predicted": 119,
+          "precision": 1,
+          "recall": 0.22972972972972974,
+          "f1": 0.37362637362637363
+        },
+        {
+          "label": "No mask",
+          "support": 160,
+          "predicted": 22,
+          "precision": 0.9545454545454546,
+          "recall": 0.13125,
+          "f1": 0.23076923076923078
+        },
+        {
+          "label": "Incorrect mask",
+          "support": 23,
+          "predicted": 5,
+          "precision": 1,
+          "recall": 0.21739130434782608,
+          "f1": 0.3571428571428571
+        }
+      ],
+      "rows": [
+        "Mask",
+        "No mask",
+        "Incorrect mask"
+      ],
+      "columns": [
+        "Mask",
+        "No mask",
+        "Incorrect mask",
+        "Unknown",
+        "Missed"
+      ],
+      "confusion_matrix": [
+        [
+          119,
+          1,
+          0,
+          0,
+          398
+        ],
+        [
+          0,
+          21,
+          0,
+          0,
+          139
+        ],
+        [
+          0,
+          0,
+          5,
+          0,
+          18
+        ]
+      ],
+      "general": {
+        "scenes": 124,
+        "ground_truth_faces": 669,
+        "detected_faces": 139,
+        "matched_faces_iou_50": 139,
+        "correct_box_and_label": 138,
+        "detector_precision": 1,
+        "detector_recall": 0.2077727952167414,
+        "classification_accuracy_on_matched_faces": 0.9928057553956835,
+        "correct_label_precision": 0.9928057553956835,
+        "end_to_end_correct_label_recall": 0.2062780269058296,
+        "accepted_matched": 139,
+        "macro_f1": 0.30885780885780884,
+        "per_class": [
+          {
+            "label": "Mask",
+            "support": 518,
+            "predicted": 119,
+            "precision": 1,
+            "recall": 0.22972972972972974,
+            "f1": 0.37362637362637363
+          },
+          {
+            "label": "No mask",
+            "support": 128,
+            "predicted": 15,
+            "precision": 0.9333333333333333,
+            "recall": 0.109375,
+            "f1": 0.1958041958041958
+          },
+          {
+            "label": "Incorrect mask",
+            "support": 23,
+            "predicted": 5,
+            "precision": 1,
+            "recall": 0.21739130434782608,
+            "f1": 0.3571428571428571
+          }
+        ],
+        "rows": [
+          "Mask",
+          "No mask",
+          "Incorrect mask"
+        ],
+        "columns": [
+          "Mask",
+          "No mask",
+          "Incorrect mask",
+          "Unknown",
+          "Missed"
+        ],
+        "confusion_matrix": [
+          [
+            119,
+            1,
+            0,
+            0,
+            398
+          ],
+          [
+            0,
+            14,
+            0,
+            0,
+            114
+          ],
+          [
+            0,
+            0,
+            5,
+            0,
+            18
+          ]
+        ]
+      },
+      "hand": {
+        "images": 32,
+        "false_safe_images": 0,
+        "false_any_mask_images": 0,
+        "correct_no_mask_only_images": 7,
+        "no_mask_recall": 0.21875
+      }
+    }
+  ]
+}

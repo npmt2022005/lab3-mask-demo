@@ -1,0 +1,177 @@
+{
+  "summary": {
+    "architecture": "YOLOv8n fine-tuned mask detector (416)",
+    "model_id": "f2bd2916a4cb1db7723b24baf6fabf0b17de0815c2b6777563b5075e3a54c5b1",
+    "execution_location": "local",
+    "scenes": 164,
+    "ground_truth_faces": 707,
+    "detected_faces": 613,
+    "matched_faces_iou_50": 550,
+    "correct_box_and_label": 533,
+    "detector_precision": 0.8972267536704731,
+    "detector_recall": 0.7779349363507779,
+    "classification_accuracy_on_matched_faces": 0.9690909090909091,
+    "correct_label_precision": 0.8694942903752039,
+    "end_to_end_correct_label_recall": 0.7538896746817539,
+    "accepted_matched": 550,
+    "macro_f1": 0.6477037455298326,
+    "per_class": [
+      {
+        "label": "Mask",
+        "support": 537,
+        "predicted": 475,
+        "precision": 0.8905263157894737,
+        "recall": 0.7877094972067039,
+        "f1": 0.8359683794466404
+      },
+      {
+        "label": "No mask",
+        "support": 156,
+        "predicted": 124,
+        "precision": 0.8467741935483871,
+        "recall": 0.6730769230769231,
+        "f1": 0.75
+      },
+      {
+        "label": "Incorrect mask",
+        "support": 14,
+        "predicted": 14,
+        "precision": 0.35714285714285715,
+        "recall": 0.35714285714285715,
+        "f1": 0.35714285714285715
+      }
+    ],
+    "rows": [
+      "Mask",
+      "No mask",
+      "Incorrect mask"
+    ],
+    "columns": [
+      "Mask",
+      "No mask",
+      "Incorrect mask",
+      "Unknown",
+      "Missed"
+    ],
+    "confusion_matrix": [
+      [
+        423,
+        0,
+        6,
+        0,
+        108
+      ],
+      [
+        2,
+        105,
+        2,
+        0,
+        47
+      ],
+      [
+        6,
+        1,
+        5,
+        0,
+        2
+      ]
+    ],
+    "inference_ms": {
+      "count": 164,
+      "mean": 44.17055060975608,
+      "min": 32.748499999999694,
+      "max": 86.96120000000019,
+      "p95": 66.3108000000002
+    },
+    "preprocess_ms": {
+      "count": 164,
+      "mean": 15.263169512195082,
+      "min": 9.38340000000062,
+      "max": 49.45980000000054,
+      "p95": 25.18580000000111
+    },
+    "note": "Same grouped test as baseline. Metrics include false detections and missed faces. Test has been used in development; confirm generalization on new webcam images.",
+    "general": {
+      "scenes": 126,
+      "ground_truth_faces": 669,
+      "detected_faces": 574,
+      "matched_faces_iou_50": 515,
+      "correct_box_and_label": 498,
+      "detector_precision": 0.8972125435540069,
+      "detector_recall": 0.7698056801195815,
+      "classification_accuracy_on_matched_faces": 0.9669902912621359,
+      "correct_label_precision": 0.867595818815331,
+      "end_to_end_correct_label_recall": 0.7443946188340808,
+      "accepted_matched": 515,
+      "macro_f1": 0.6267375397240994,
+      "per_class": [
+        {
+          "label": "Mask",
+          "support": 537,
+          "predicted": 474,
+          "precision": 0.8924050632911392,
+          "recall": 0.7877094972067039,
+          "f1": 0.8367952522255193
+        },
+        {
+          "label": "No mask",
+          "support": 118,
+          "predicted": 86,
+          "precision": 0.813953488372093,
+          "recall": 0.5932203389830508,
+          "f1": 0.6862745098039216
+        },
+        {
+          "label": "Incorrect mask",
+          "support": 14,
+          "predicted": 14,
+          "precision": 0.35714285714285715,
+          "recall": 0.35714285714285715,
+          "f1": 0.35714285714285715
+        }
+      ],
+      "rows": [
+        "Mask",
+        "No mask",
+        "Incorrect mask"
+      ],
+      "columns": [
+        "Mask",
+        "No mask",
+        "Incorrect mask",
+        "Unknown",
+        "Missed"
+      ],
+      "confusion_matrix": [
+        [
+          423,
+          0,
+          6,
+          0,
+          108
+        ],
+        [
+          2,
+          70,
+          2,
+          0,
+          44
+        ],
+        [
+          6,
+          1,
+          5,
+          0,
+          2
+        ]
+      ]
+    },
+    "hand": {
+      "images": 38,
+      "false_safe_images": 0,
+      "false_any_mask_images": 0,
+      "correct_no_mask_only_images": 37,
+      "no_mask_recall": 0.9210526315789473
+    }
+  }
+}

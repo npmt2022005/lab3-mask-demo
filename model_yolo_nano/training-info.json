@@ -1,0 +1,446 @@
+{
+  "architecture": "YOLOv8n fine-tuned mask detector (416)",
+  "input_size": 416,
+  "epochs_completed": 15,
+  "parent_model_id": "77f801e8948f5dedbbd4e629273368a7da540daeebdf6b26300bf8708f404874",
+  "gpu": "RTX 3060 Laptop / CUDA",
+  "recipe": "AdamW lr0=.00005, batch8, freeze0, AMP, warmup1 biaslr0, seed2026, patience6, max20 epochs",
+  "data": "Existing scene + reviewed HOF + user-confirmed Incorrect-mask webcam representatives; train only",
+  "webcam_labels": "All 42 Incorrect mask, confirmed by user; 9 burst representatives x4 in TRAIN",
+  "manifest_sha256": "64df2e98f53310841dea5415efa61a69ec27d3b90d96376b9f067e6a43f7de72",
+  "validation_selection": "Validation only: retain general macro-F1/recall and hand No-mask recall, then minimize false-safe hand cases, tie-break combined macro-F1",
+  "confidence": 0.25,
+  "test_summary": {
+    "architecture": "YOLOv8n fine-tuned mask detector (416)",
+    "model_id": "f2bd2916a4cb1db7723b24baf6fabf0b17de0815c2b6777563b5075e3a54c5b1",
+    "execution_location": "local",
+    "scenes": 164,
+    "ground_truth_faces": 707,
+    "detected_faces": 613,
+    "matched_faces_iou_50": 550,
+    "correct_box_and_label": 533,
+    "detector_precision": 0.8972267536704731,
+    "detector_recall": 0.7779349363507779,
+    "classification_accuracy_on_matched_faces": 0.9690909090909091,
+    "correct_label_precision": 0.8694942903752039,
+    "end_to_end_correct_label_recall": 0.7538896746817539,
+    "accepted_matched": 550,
+    "macro_f1": 0.6477037455298326,
+    "per_class": [
+      {
+        "label": "Mask",
+        "support": 537,
+        "predicted": 475,
+        "precision": 0.8905263157894737,
+        "recall": 0.7877094972067039,
+        "f1": 0.8359683794466404
+      },
+      {
+        "label": "No mask",
+        "support": 156,
+        "predicted": 124,
+        "precision": 0.8467741935483871,
+        "recall": 0.6730769230769231,
+        "f1": 0.75
+      },
+      {
+        "label": "Incorrect mask",
+        "support": 14,
+        "predicted": 14,
+        "precision": 0.35714285714285715,
+        "recall": 0.35714285714285715,
+        "f1": 0.35714285714285715
+      }
+    ],
+    "rows": [
+      "Mask",
+      "No mask",
+      "Incorrect mask"
+    ],
+    "columns": [
+      "Mask",
+      "No mask",
+      "Incorrect mask",
+      "Unknown",
+      "Missed"
+    ],
+    "confusion_matrix": [
+      [
+        423,
+        0,
+        6,
+        0,
+        108
+      ],
+      [
+        2,
+        105,
+        2,
+        0,
+        47
+      ],
+      [
+        6,
+        1,
+        5,
+        0,
+        2
+      ]
+    ],
+    "inference_ms": {
+      "count": 164,
+      "mean": 44.17055060975608,
+      "min": 32.748499999999694,
+      "max": 86.96120000000019,
+      "p95": 66.3108000000002
+    },
+    "preprocess_ms": {
+      "count": 164,
+      "mean": 15.263169512195082,
+      "min": 9.38340000000062,
+      "max": 49.45980000000054,
+      "p95": 25.18580000000111
+    },
+    "note": "Same grouped test as baseline. Metrics include false detections and missed faces. Test has been used in development; confirm generalization on new webcam images.",
+    "general": {
+      "scenes": 126,
+      "ground_truth_faces": 669,
+      "detected_faces": 574,
+      "matched_faces_iou_50": 515,
+      "correct_box_and_label": 498,
+      "detector_precision": 0.8972125435540069,
+      "detector_recall": 0.7698056801195815,
+      "classification_accuracy_on_matched_faces": 0.9669902912621359,
+      "correct_label_precision": 0.867595818815331,
+      "end_to_end_correct_label_recall": 0.7443946188340808,
+      "accepted_matched": 515,
+      "macro_f1": 0.6267375397240994,
+      "per_class": [
+        {
+          "label": "Mask",
+          "support": 537,
+          "predicted": 474,
+          "precision": 0.8924050632911392,
+          "recall": 0.7877094972067039,
+          "f1": 0.8367952522255193
+        },
+        {
+          "label": "No mask",
+          "support": 118,
+          "predicted": 86,
+          "precision": 0.813953488372093,
+          "recall": 0.5932203389830508,
+          "f1": 0.6862745098039216
+        },
+        {
+          "label": "Incorrect mask",
+          "support": 14,
+          "predicted": 14,
+          "precision": 0.35714285714285715,
+          "recall": 0.35714285714285715,
+          "f1": 0.35714285714285715
+        }
+      ],
+      "rows": [
+        "Mask",
+        "No mask",
+        "Incorrect mask"
+      ],
+      "columns": [
+        "Mask",
+        "No mask",
+        "Incorrect mask",
+        "Unknown",
+        "Missed"
+      ],
+      "confusion_matrix": [
+        [
+          423,
+          0,
+          6,
+          0,
+          108
+        ],
+        [
+          2,
+          70,
+          2,
+          0,
+          44
+        ],
+        [
+          6,
+          1,
+          5,
+          0,
+          2
+        ]
+      ]
+    },
+    "hand": {
+      "images": 38,
+      "false_safe_images": 0,
+      "false_any_mask_images": 0,
+      "correct_no_mask_only_images": 37,
+      "no_mask_recall": 0.9210526315789473
+    }
+  },
+  "baseline_test_summary": {
+    "architecture": "YOLOv8n mask detector",
+    "model_id": "77f801e8948f5dedbbd4e629273368a7da540daeebdf6b26300bf8708f404874",
+    "execution_location": "local",
+    "scenes": 126,
+    "ground_truth_faces": 669,
+    "detected_faces": 580,
+    "matched_faces_iou_50": 518,
+    "correct_box_and_label": 502,
+    "detector_precision": 0.8931034482758621,
+    "detector_recall": 0.7742899850523169,
+    "classification_accuracy_on_matched_faces": 0.9691119691119691,
+    "correct_label_precision": 0.8655172413793103,
+    "end_to_end_correct_label_recall": 0.750373692077728,
+    "accepted_matched": 518,
+    "macro_f1": 0.6384599348952069,
+    "per_class": [
+      {
+        "label": "Mask",
+        "support": 537,
+        "predicted": 477,
+        "precision": 0.8951781970649895,
+        "recall": 0.7951582867783985,
+        "f1": 0.8422090729783037
+      },
+      {
+        "label": "No mask",
+        "support": 118,
+        "predicted": 87,
+        "precision": 0.7931034482758621,
+        "recall": 0.5847457627118644,
+        "f1": 0.6731707317073171
+      },
+      {
+        "label": "Incorrect mask",
+        "support": 14,
+        "predicted": 16,
+        "precision": 0.375,
+        "recall": 0.42857142857142855,
+        "f1": 0.39999999999999997
+      }
+    ],
+    "rows": [
+      "Mask",
+      "No mask",
+      "Incorrect mask"
+    ],
+    "columns": [
+      "Mask",
+      "No mask",
+      "Incorrect mask",
+      "Unknown",
+      "Missed"
+    ],
+    "confusion_matrix": [
+      [
+        427,
+        2,
+        5,
+        0,
+        103
+      ],
+      [
+        1,
+        69,
+        2,
+        0,
+        46
+      ],
+      [
+        6,
+        0,
+        6,
+        0,
+        2
+      ]
+    ],
+    "inference_ms": {
+      "count": 126,
+      "mean": 29.545368253968256,
+      "min": 22.068100000000186,
+      "max": 46.529599999999846,
+      "p95": 42.15280000000075
+    },
+    "preprocess_ms": {
+      "count": 126,
+      "mean": 7.902770634920638,
+      "min": 5.909799999999905,
+      "max": 13.166400000000067,
+      "p95": 10.871899999999641
+    },
+    "note": "Same grouped test as baseline. Metrics include false detections and missed faces. Test has been used in development; confirm generalization on new webcam images."
+  },
+  "baseline_hand_test_summary": {
+    "architecture": "YOLOv8n mask detector",
+    "model_id": "77f801e8948f5dedbbd4e629273368a7da540daeebdf6b26300bf8708f404874",
+    "split": "test",
+    "images": 38,
+    "false_safe_images": 4,
+    "false_safe_rate": 0.10526315789473684,
+    "false_any_mask_images": 4,
+    "mouth_or_lower_face": {
+      "images": 12,
+      "false_safe_images": 1,
+      "false_any_mask_images": 1,
+      "scenes": 12,
+      "ground_truth_faces": 12,
+      "detected_faces": 8,
+      "matched_faces_iou_50": 8,
+      "correct_box_and_label": 7,
+      "detector_precision": 1,
+      "detector_recall": 0.6666666666666666,
+      "classification_accuracy_on_matched_faces": 0.875,
+      "correct_label_precision": 0.875,
+      "end_to_end_correct_label_recall": 0.5833333333333334,
+      "accepted_matched": 8,
+      "macro_f1": 0.24561403508771928,
+      "per_class": [
+        {
+          "label": "Mask",
+          "support": 0,
+          "predicted": 1,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0
+        },
+        {
+          "label": "No mask",
+          "support": 12,
+          "predicted": 7,
+          "precision": 1,
+          "recall": 0.5833333333333334,
+          "f1": 0.7368421052631579
+        },
+        {
+          "label": "Incorrect mask",
+          "support": 0,
+          "predicted": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0
+        }
+      ],
+      "rows": [
+        "Mask",
+        "No mask",
+        "Incorrect mask"
+      ],
+      "columns": [
+        "Mask",
+        "No mask",
+        "Incorrect mask",
+        "Unknown",
+        "Missed"
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          7,
+          0,
+          0,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    "scenes": 38,
+    "ground_truth_faces": 38,
+    "detected_faces": 29,
+    "matched_faces_iou_50": 28,
+    "correct_box_and_label": 24,
+    "detector_precision": 0.9655172413793104,
+    "detector_recall": 0.7368421052631579,
+    "classification_accuracy_on_matched_faces": 0.8571428571428571,
+    "correct_label_precision": 0.8275862068965517,
+    "end_to_end_correct_label_recall": 0.631578947368421,
+    "accepted_matched": 28,
+    "macro_f1": 0.25806451612903225,
+    "per_class": [
+      {
+        "label": "Mask",
+        "support": 0,
+        "predicted": 5,
+        "precision": 0,
+        "recall": 0,
+        "f1": 0
+      },
+      {
+        "label": "No mask",
+        "support": 38,
+        "predicted": 24,
+        "precision": 1,
+        "recall": 0.631578947368421,
+        "f1": 0.7741935483870968
+      },
+      {
+        "label": "Incorrect mask",
+        "support": 0,
+        "predicted": 0,
+        "precision": 0,
+        "recall": 0,
+        "f1": 0
+      }
+    ],
+    "rows": [
+      "Mask",
+      "No mask",
+      "Incorrect mask"
+    ],
+    "columns": [
+      "Mask",
+      "No mask",
+      "Incorrect mask",
+      "Unknown",
+      "Missed"
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        24,
+        0,
+        0,
+        10
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "note": "All primary faces reviewed as No mask. False-safe counts Mask predictions near primary face even if box IoU below 0.5. HOF proposals preselected by YuNet and reviewed; this is a focused public occlusion challenge, not webcam verification."
+  },
+  "retention_passed": false,
+  "independent_webcam_test": false,
+  "model_id": "f2bd2916a4cb1db7723b24baf6fabf0b17de0815c2b6777563b5075e3a54c5b1",
+  "model_onnx_sha256": "adec2c01eabd8605ccff0bd0a49b7f46c7d1a00f4ec68fdd53cbe6edef906d48"
+}

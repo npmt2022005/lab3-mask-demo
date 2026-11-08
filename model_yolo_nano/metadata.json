@@ -1,5 +1,5 @@
 {
-  "architecture": "YOLOv8n mask detector",
+  "architecture": "YOLOv8n fine-tuned mask detector (416)",
   "labels": [
     "Mask",
     "No mask",
@@ -13,7 +13,7 @@
   "selection": "Ultralytics best.pt selected using validation fitness; confidence will be selected on validation only",
   "source": "https://github.com/ultralytics/ultralytics",
   "pretrained_source": "https://huggingface.co/Ultralytics/YOLOv8",
-  "train_run": "runs/detect/runs_yolo/mask_yolov8n_416",
+  "train_run": "runs/detect/runs_yolo/mask_yolov8n_finetune416",
   "license": "AGPL-3.0 (Ultralytics)",
-  "confidence_selection": "Highest macro-F1 on 124 validation scenes; no test-based threshold tuning"
+  "confidence_selection": "Validation only: retain general macro-F1/recall and hand No-mask recall, then minimize false-safe hand cases, tie-break combined macro-F1"
 }
