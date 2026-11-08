@@ -3,7 +3,7 @@ import { performance } from 'node:perf_hooks';
 import { randomUUID } from 'node:crypto';
 import { resolve } from 'node:path';
 import { pathToFileURL, fileURLToPath } from 'node:url';
-import { loadClassifier } from './inference.mjs';
+import { createModelSwitcher } from './model-switcher.mjs';
 
 export function createApp(classifier) {
   const app = express();
@@ -22,17 +22,20 @@ export function createApp(classifier) {
   });
   app.use(express.static(fileURLToPath(new URL('./public/', import.meta.url))));
   app.get('/health', (_req, res) => res.json({ ready: true, labels: classifier.labels,
-    model_id: classifier.modelId, backend: classifier.backend, task: classifier.task || 'image-classification', architecture: classifier.architecture || 'Teachable Machine legacy', execution_location: process.env.EXECUTION_LOCATION || 'local' }));
+    model_id: classifier.modelId, backend: classifier.backend, task: classifier.task || 'image-classification', architecture: classifier.architecture || 'Teachable Machine legacy', execution_location: process.env.EXECUTION_LOCATION || 'local',
+    ...(classifier.models?{models:classifier.models,default_model:classifier.defaultModel}:{}) }));
   let busy = false;
   app.post('/predict', (req, res, next) => {
     if (!req.is('image/jpeg')) return res.status(415).json({ error: 'Send raw JPEG with Content-Type: image/jpeg' });
     req.receivedAt = performance.now(); next();
   }, express.raw({ type: 'image/jpeg', limit: '300kb' }), async (req, res) => {
     if (!req.body?.length) return res.status(400).json({ error: 'Empty image' });
+    const model=req.query.model ?? classifier.defaultModel;
+    if(classifier.models&&!classifier.models.some(m=>m.id===model))return res.status(400).json({error:'Choose model nano or small'});
     if (busy) return res.status(429).json({ error: 'Inference busy; retry later' });
     busy = true;
     try {
-      const result = await classifier.predict(req.body);
+      const result = await classifier.predict(req.body,model);
       res.json({ request_id: randomUUID(), ...result, server_ms: performance.now() - req.receivedAt,
         execution_location: process.env.EXECUTION_LOCATION || 'local' });
     } catch (error) {
@@ -45,7 +48,7 @@ export function createApp(classifier) {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
-  const classifier = await loadClassifier(process.env.MODEL_FOLDER || undefined);
+  const classifier = await createModelSwitcher();
   const port = Number(process.env.PORT || 8080);
   createApp(classifier).listen(port, '0.0.0.0', () => console.log(`Lab3 API ready on :${port}; labels=${classifier.labels.join(', ')}`));
 }

@@ -9,9 +9,11 @@ let checkedBase = '', health = null, lastResult = null;
 const frameSamples = [], faceSamples = [];
 let datasetCapturing = false, datasetCount = 0;
 $('apiUrl').value = localStorage.getItem('lab3CameraApi') || location.origin;
+if(['nano','small'].includes(localStorage.getItem('lab3CameraModel')))$('modelSelect').value=localStorage.getItem('lab3CameraModel');
 
 function message(text, error = false) { $('message').textContent = text; $('message').classList.toggle('error', error); }
 function updateControls() {
+  $('modelSelect').disabled=!health?.models;
   $('captureDataset').disabled = !stream || datasetCapturing;
   const source = Boolean(stream || photo);
   $('openCamera').disabled = opening;
@@ -52,8 +54,10 @@ async function connect() {
     if (base !== baseUrl()) throw new Error('Địa chỉ API đã thay đổi. Kiểm tra lại kết nối.');
     health = data; checkedBase = base; localStorage.setItem('lab3CameraApi', base);
     $('apiBadge').textContent = data.execution_location === 'cloud' ? 'Cloud' : 'Local';
-    $('apiInfo').textContent = `${data.architecture} · ${data.execution_location === 'cloud' ? 'Xử lý trên Cloud' : 'Xử lý tại server local'}`;
-    $('modelArchitecture').textContent = 'LAB 3 / ' + data.architecture;
+    const selected=data.models?.find(m=>m.id===$('modelSelect').value);
+    $('apiInfo').textContent = `${selected?.architecture||data.architecture} · ${data.execution_location === 'cloud' ? 'Xử lý trên Cloud' : 'Xử lý tại server local'}`;
+    $('modelArchitecture').textContent = 'LAB 3 / ' + (selected?.architecture||data.architecture);
+    updateControls();
     return { base, health: data };
   } catch (e) { $('apiBadge').textContent = 'Chưa kết nối'; $('apiInfo').textContent = 'Kiểm tra server và địa chỉ API.'; throw e; }
 }
@@ -198,17 +202,22 @@ async function recognize(ticket) {
   const t0=performance.now(),source=stream?'webcam':'uploaded_image';
   const {blob,frame}=await capture(),t1=performance.now();
   if(ticket!==generation)return;
-  const result=await fetchJson(base+'/predict',{method:'POST',headers:{'Content-Type':'image/jpeg'},body:blob},30000,true);
+  const requestedModel=info.models?$('modelSelect').value:null;
+  const result=await fetchJson(base+'/predict'+(requestedModel?'?model='+encodeURIComponent(requestedModel):''),{method:'POST',headers:{'Content-Type':'image/jpeg'},body:blob},90000,true);
   const t2=performance.now();
   if(ticket!==generation)return;
+  if(requestedModel&&result.model_key!==requestedModel)throw new Error('API trả kết quả của model khác.');
   if(!Array.isArray(result.detections)||!result.image||!result.counts||!Number.isFinite(result.inference_ms))throw new Error('API trả kết quả không hợp lệ.');
   const timestamp=new Date().toISOString();
   const rows=result.detections.map(d=>({timestamp,source,request_id:result.request_id,model_id:result.model_id,
-    api_url:base,execution_location:result.execution_location,face_id:d.id,label:d.label,truth:'',probability:d.probability,
+    api_url:base,execution_location:result.execution_location,model_key:result.model_key||'',architecture:result.architecture,face_id:d.id,label:d.label,truth:'',probability:d.probability,
     face_score:d.face_score,...d.box}));
   showResult(frame,result,rows);faceSamples.push(...rows);
+  $('modelArchitecture').textContent='LAB 3 / '+result.architecture;
+  $('apiInfo').textContent=result.architecture+' · '+(result.execution_location==='cloud'?'Xử lý trên Cloud':'Xử lý tại server local');
   await new Promise(resolve=>requestAnimationFrame(()=>setTimeout(resolve,0)));
-  const entry={timestamp,source,session:previewSession,first_request:!frameSamples.some(s=>s.session===previewSession&&s.api_url===base),
+  const entry={timestamp,source,session:previewSession,first_request:(result.model_load_ms||0)>0||!frameSamples.some(s=>s.session===previewSession&&s.api_url===base&&s.model_id===result.model_id),
+    model_key:result.model_key||'',architecture:result.architecture,model_load_ms:result.model_load_ms||0,
     request_id:result.request_id,model_id:result.model_id,api_url:base,execution_location:result.execution_location||info.execution_location,
     face_count:result.face_count,mask_count:result.counts.Mask,no_mask_count:result.counts['No mask'],incorrect_count:result.counts['Incorrect mask'],unknown_count:result.counts.Unknown,
     capture_ms:t1-t0,detector_ms:result.detector_ms,classification_ms:result.classification_ms,preprocess_ms:result.preprocess_ms,
@@ -278,6 +287,17 @@ function exportCsv(rows,name){
   download(new Blob([csv],{type:'text/csv;charset=utf-8'}),name);
 }
 $('openCamera').onclick=openCamera;$('closeCamera').onclick=()=>closeCamera();
+$('modelSelect').onchange=()=>{
+  stopRecognition();lastResult=null;clearDisplayedResults();
+  const source=stream?video:photo;
+  if(source){ctx.drawImage(source,0,0,canvas.width,canvas.height);}
+  const selected=health?.models?.find(m=>m.id===$('modelSelect').value);
+  localStorage.setItem('lab3CameraModel',$('modelSelect').value);
+  $('modelArchitecture').textContent='LAB 3 / '+(selected?.architecture||$('modelSelect').value);
+  if(selected)$('apiInfo').textContent=selected.architecture+' · '+(health.execution_location==='cloud'?'Xử lý trên Cloud':'Xử lý tại server local');
+  message('Đã chọn '+(selected?.name||$('modelSelect').value)+'. Bấm nhận diện để chạy; lần đầu có thể cần chờ nạp model.');
+  updateControls();
+};
 $('cameraDevice').onchange=()=>{if(stream)openCamera();};
 $('predictOnce').onclick=once;$('startLive').onclick=live;
 $('stopLive').onclick=()=>{stopRecognition();message('Đã dừng nhận diện, giữ ảnh kết quả cuối. Camera vẫn mở; bấm Tắt camera để ngắt.');};

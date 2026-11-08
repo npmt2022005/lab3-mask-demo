@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "testedAt": "2026-11-08T17:46:23.033Z",
+  "nano": "f2bd2916a4cb1db7723b24baf6fabf0b17de0815c2b6777563b5075e3a54c5b1",
+  "small": "021c5436cc9ea41b2a2c041052790be81c9f8e851e6b652ccb192eef5925783c",
+  "checks": [
+    "real models/API",
+    "nano-small-nano",
+    "release/switch load time",
+    "cancel stale response",
+    "CSV model isolation",
+    "fake webcam live switch stops loop",
+    "camera release",
+    "mobile layout",
+    "selection persists"
+  ],
+  "note": "Only simulated camera from public demo. No physical camera activated."
+}

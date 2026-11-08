@@ -1,5 +1,7 @@
 # YOLOv8n 416 fine-tune — 09/11/2026
 
+**Cập nhật triển khai:** sau khi xem kết quả, người dùng yêu cầu merge và deploy, đồng thời thêm lựa chọn Nano/Small. App mặc định nano fine-tune và cho chọn small 640. Các đoạn quyết định giữ main bên dưới là kết luận ban đầu trước yêu cầu này; số đo không thay đổi, `retention_passed=false` vẫn được giữ để phản ánh đánh đổi thực tế.
+
 Fine-tune đã hoàn thành trên RTX 3060, dừng sớm sau **15/20 epoch**. Bắt đầu từ nano đã học khẩu trang, không dùng checkpoint small. Input 416×416, batch8, freeze0, AMP, AdamW lr0=0,00005, warmup1/biaslr0, seed2026, patience6. Chọn checkpoint bằng validation fitness và confidence **0,25** bằng validation, không đổi ngưỡng sau khi xem test.
 
 Bộ train kết hợp giữ ba nhãn: cảnh khẩu trang cũ, HOF và 9 ảnh đại diện từ phiên 42 ảnh webcam, mỗi đại diện lặp 4 lần. Tổng 1.054 mục train. Toàn bộ 42 ảnh do người dùng xác nhận là Incorrect mask (class2); không tự đổi nhãn sang đeo đúng. Ảnh cá nhân và dataset không được đẩy lên repo.

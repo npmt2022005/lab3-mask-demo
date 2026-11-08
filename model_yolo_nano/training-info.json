@@ -442,5 +442,12 @@
   "retention_passed": false,
   "independent_webcam_test": false,
   "model_id": "f2bd2916a4cb1db7723b24baf6fabf0b17de0815c2b6777563b5075e3a54c5b1",
-  "model_onnx_sha256": "adec2c01eabd8605ccff0bd0a49b7f46c7d1a00f4ec68fdd53cbe6edef906d48"
+  "model_onnx_sha256": "adec2c01eabd8605ccff0bd0a49b7f46c7d1a00f4ec68fdd53cbe6edef906d48",
+  "deployment_decision": {
+    "user_requested_merge_and_deploy": true,
+    "date": "2026-11-09",
+    "default_selection": "nano",
+    "alternative": "YOLOv8s 640 selectable per request",
+    "note": "Original quality-retention result remains false; override requested by user after results disclosed"
+  }
 }

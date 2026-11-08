@@ -40,6 +40,9 @@
           <button id="sampleAgain" class="text-button">Dùng ảnh mẫu nhiều người</button>
         </section>
         <section class="control"><div class="section-line"><h2>Nhận diện</h2><span class="step">02</span></div>
+          <label for="modelSelect">Model nhận diện</label>
+          <select id="modelSelect"><option value="nano">YOLOv8n · Nano · 416 × 416</option><option value="small">YOLOv8s · Small · 640 × 640</option></select>
+          <p id="modelHint" class="hint">Nano ưu tiên tốc độ; Small cần nhiều tài nguyên hơn. Đổi model sẽ dừng nhận diện, lần chạy đầu cần chờ nạp.</p>
           <button id="predictOnce" class="primary full" disabled>Nhận diện 1 ảnh</button>
           <div class="button-row"><button id="startLive" disabled>Bắt đầu liên tục</button><button id="stopLive" disabled>Dừng nhận diện</button></div>
           <p id="message" class="message" role="status" aria-live="polite">Đang kiểm tra kết nối…</p>

@@ -1,8 +1,10 @@
 # Lab 3 — triển khai Render Free
 
-> **Nhánh thử YOLOv8n 416 fine-tune:** giảm lỗi che mặt và thích nghi phiên webcam, nhưng test cảnh chung giảm từ 75,04% xuống 74,44%. Chưa đề nghị thay main. Xem [báo cáo, số đo và giới hạn](reports/NANO_FINETUNE_20261109.md). Dockerfile của nhánh này tải bản fine-tune từ `model_yolo_nano`.
+> **Chọn Nano / Small:** ứng dụng hỗ trợ YOLOv8n 416 fine-tune và YOLOv8s 640. Người dùng đã yêu cầu merge/triển khai cùng lựa chọn hai model. Đánh đổi chất lượng của nano vẫn được giữ trong [báo cáo](reports/NANO_FINETUNE_20261109.md), không coi mọi chỉ số đều cải thiện.
 
-Đây là gói triển khai riêng. Dockerfile đang dùng YOLOv8n 416 (`model_yolo_nano`) để chạy liên tục trên CPU miễn phí; muốn dùng lại YOLOv8s 640, đổi `model_yolo_nano` thành `model_yolo` ở cả hai dòng COPY và ENV trong Dockerfile. Chỉ có code phục vụ web/API, ONNX và metadata, không có ảnh webcam cá nhân, dataset, firmware hay mật khẩu.
+Chọn **Model nhận diện** trên giao diện: Nano (`model_yolo_nano`, 416×416) hoặc Small (`model_yolo`, 640×640). Mặc định Nano; lựa chọn được gửi theo từng request, không đổi lựa chọn của người dùng khác. Backend chỉ giữ một session ONNX, nhả session cũ trước khi nạp model mới. Lần đầu đổi model sẽ chậm hơn, đặc biệt trên CPU miễn phí. Đổi lựa chọn sẽ dừng nhận diện và xóa kết quả cũ; bấm Nhận diện/Bắt đầu liên tục để chạy lại.
+
+API: `POST /predict?model=nano` hoặc `?model=small`, body JPEG như trước; không có tham số sẽ dùng Nano. `/health` liệt kê hai model. Kết quả/CSV có `model_key`, `model_id`, `architecture`, `model_load_ms` để so sánh và tách lượt nạp model khỏi suy luận ổn định. Không có ảnh cá nhân, dataset hay mật khẩu trong repo.
 
 ## Đưa lên Render
 
